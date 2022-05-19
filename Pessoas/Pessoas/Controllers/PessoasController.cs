@@ -12,5 +12,9 @@ namespace Pessoas.Controllers
         {
             return View();
         }
+        public IActionResult Criar()
+        {
+            return View();
+        }
     }
 }
