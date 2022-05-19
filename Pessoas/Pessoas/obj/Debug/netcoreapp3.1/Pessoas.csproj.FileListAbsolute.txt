@@ -352,6 +352,4 @@ E:\C-Sharp\Pessoas\Pessoas\Pessoas\obj\Debug\netcoreapp3.1\Pessoas.csproj.CopyCo
 E:\C-Sharp\Pessoas\Pessoas\Pessoas\obj\Debug\netcoreapp3.1\Pessoas.dll
 E:\C-Sharp\Pessoas\Pessoas\Pessoas\obj\Debug\netcoreapp3.1\Pessoas.pdb
 E:\C-Sharp\Pessoas\Pessoas\Pessoas\obj\Debug\netcoreapp3.1\Pessoas.genruntimeconfig.cache
-E:\C-Sharp\Pessoas\Pessoas\Pessoas\obj\Debug\netcoreapp3.1\Razor\Views\ListaPessoal\ListaPessoal.cshtml.g.cs
-E:\C-Sharp\Pessoas\Pessoas\Pessoas\obj\Debug\netcoreapp3.1\Razor\Views\ListaPessoas\Lista.cshtml.g.cs
 E:\C-Sharp\Pessoas\Pessoas\Pessoas\obj\Debug\netcoreapp3.1\Razor\Views\Pessoas\Index.cshtml.g.cs
