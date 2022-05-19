@@ -1,8 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Pessoas.Data;
+using Pessoas.Repositorio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +27,17 @@ namespace Pessoas
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            //Configuração para acessar o banco de dados
+            services.AddEntityFrameworkSqlServer()
+                .AddDbContext<BancoContext>(
+                o => o.UseSqlServer(Configuration.GetConnectionString("DataBase")));
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddScoped<IPessoaRepositorio, PessoaRepositorio>();
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
