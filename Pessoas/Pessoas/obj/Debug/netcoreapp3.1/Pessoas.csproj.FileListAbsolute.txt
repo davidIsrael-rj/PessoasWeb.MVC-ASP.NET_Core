@@ -384,3 +384,4 @@ E:\C-Sharp\Pessoas\Pessoas\Pessoas\bin\Debug\netcoreapp3.1\runtimes\win\lib\nets
 E:\C-Sharp\Pessoas\Pessoas\Pessoas\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 E:\C-Sharp\Pessoas\Pessoas\Pessoas\obj\Debug\netcoreapp3.1\Pessoas.csproj.AssemblyReference.cache
 E:\C-Sharp\Pessoas\Pessoas\Pessoas\obj\Debug\netcoreapp3.1\Razor\Views\Pessoas\Criar.cshtml.g.cs
+E:\C-Sharp\Pessoas\Pessoas\Pessoas\obj\Debug\netcoreapp3.1\Razor\Views\Pessoas\ApagarConfirmacao.cshtml.g.cs

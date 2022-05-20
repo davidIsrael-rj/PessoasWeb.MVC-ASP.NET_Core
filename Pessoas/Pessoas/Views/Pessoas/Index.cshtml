@@ -42,8 +42,8 @@
                     }
                     <td>
                     <div class="btn-group" role="group">
-                        <a role="button" class="btn btn-primary" asp-route-id="" asp-controller="Pessoas" asp-action="Editar">Editar</a>
-                        <a role="button" class="btn btn-danger" asp-route-id="" asp-controller="Pessoas" asp-action="Apagar">Apagar</a>
+                        <a role="button" class="btn btn-primary" asp-route-id="@pessoas.Id" asp-controller="Pessoas" asp-action="Editar">Editar</a>
+                        <a role="button" class="btn btn-danger" asp-route-id="@pessoas.Id" asp-controller="Pessoas" asp-action="ApagarConfirmacao">Apagar</a>
                     </div>
                     </td>
                 </tr>
