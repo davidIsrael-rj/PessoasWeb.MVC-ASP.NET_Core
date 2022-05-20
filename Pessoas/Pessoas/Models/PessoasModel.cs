@@ -21,6 +21,7 @@ namespace Pessoas.Models
         public string CPF { get; set; }
               
         [Required(ErrorMessage ="Escolha uma opção")]
+        
         public bool Ativo { get; set; }
       
     }
