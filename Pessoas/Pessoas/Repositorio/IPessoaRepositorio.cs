@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pessoas.Repositorio
 {
-    interface IPessoaRepositorio
+    public interface IPessoaRepositorio
     {
         PessoasModel ListarPorId(int Id);
 

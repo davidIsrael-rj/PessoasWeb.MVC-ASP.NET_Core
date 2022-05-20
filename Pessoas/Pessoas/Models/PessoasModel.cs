@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 namespace Pessoas.Models
 {
     public class PessoasModel
-    {
-      
+    {    
 
         public int Id { get; set; }
 

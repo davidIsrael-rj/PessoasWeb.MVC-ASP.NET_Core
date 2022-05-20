@@ -1,4 +1,5 @@
-﻿using Pessoas.Models;
+﻿using Pessoas.Data;
+using Pessoas.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,29 +9,62 @@ namespace Pessoas.Repositorio
 {
     public class PessoaRepositorio : IPessoaRepositorio
     {
+
+        private readonly BancoContext _bancoContext;
+
+        public PessoaRepositorio(BancoContext bancoContext)
+        {
+            _bancoContext = bancoContext;
+        }
+
+        public PessoasModel ListarPoId(int id)
+        {
+            return _bancoContext.Pessoas.FirstOrDefault(x => x.Id == id);
+        }
+
         public PessoasModel Adicionar(PessoasModel pessoas)
         {
-            throw new NotImplementedException();
+            
+            _bancoContext.Pessoas.Add(pessoas);
+            _bancoContext.SaveChanges();
+            return pessoas;
         }
 
         public bool Apagar(int Id)
         {
-            throw new NotImplementedException();
+            PessoasModel pessoaDB = ListarPoId(Id);
+
+            if (pessoaDB == null) throw new System.Exception("Houve um erro na deleção do contato!");
+
+            _bancoContext.Pessoas.Remove(pessoaDB);
+            _bancoContext.SaveChanges();
+
+            return true;
         }
 
         public PessoasModel Atualizar(PessoasModel pessoas)
         {
-            throw new NotImplementedException();
+            PessoasModel pessoaDB = ListarPoId(pessoas.Id);
+            if (pessoaDB == null) throw new System.Exception("Houve um erro na atualização da Pessoa ");
+
+            pessoaDB.Nome = pessoas.Nome;
+            pessoaDB.CPF = pessoas.CPF;
+            pessoaDB.Ativo = pessoas.Ativo;
+
+            _bancoContext.Pessoas.Update(pessoaDB);
+            _bancoContext.SaveChanges();
+
+            return pessoaDB;
         }
 
         public List<PessoasModel> BuscarTodos()
         {
-            throw new NotImplementedException();
+            return _bancoContext.Pessoas.ToList();
         }
 
         public PessoasModel ListarPorId(int Id)
         {
-            throw new NotImplementedException();
+            return _bancoContext.Pessoas.FirstOrDefault(x => x.Id == Id);
         }
     }
 }
