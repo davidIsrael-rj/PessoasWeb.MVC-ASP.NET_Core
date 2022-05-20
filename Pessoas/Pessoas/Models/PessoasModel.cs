@@ -12,11 +12,15 @@ namespace Pessoas.Models
 
         public int Id { get; set; }
 
+        [Required(ErrorMessage ="Digite o Nome da Pessoa")]
         [StringLength(200)]
         public string Nome { get; set; }
+        
+        [Required(ErrorMessage ="Digite o CPF")]
         [StringLength(11)]
         public string CPF { get; set; }
               
+        [Required(ErrorMessage ="Escolha uma opção")]
         public bool Ativo { get; set; }
       
     }

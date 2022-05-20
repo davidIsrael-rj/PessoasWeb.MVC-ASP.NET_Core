@@ -34,13 +34,14 @@ namespace Pessoas.Controllers
                 {
                  
                     _pessoaRepositorio.Adicionar(pessoas);
+                    TempData["MensagemSucesso"] = "Pessoa cadastrada com sucesso";
                     return RedirectToAction("Index");
                 }
                 return View(pessoas);
             }
-            catch (Exception)
+            catch (Exception erro)
             {
-
+                TempData["MensagemErro"] = $"Erro, não conseguimos cadastrar a Pessoa, tente novamente, detalhe do erro: {erro.Message}";
                 return RedirectToAction("Index");
             }
         }
@@ -66,18 +67,18 @@ namespace Pessoas.Controllers
 
                 if (apag)
                 {
-                    TempData["MensagemSucesso"] = "Contato deletado com sucesso";
+                    TempData["MensagemSucesso"] = "Pessoa deletada com sucesso";
                 }
                 else
                 {
-                    TempData["MensagemErro"] = "Ops, não conseguimos deletar seu contato, tente novamente";
+                    TempData["MensagemErro"] = "Ops, não conseguimos deletar a Pessoa, tente novamente";
                 }
                 return RedirectToAction("Index");
             }
             catch (System.Exception erro)
             {
 
-                TempData["MensagemErro"] = $"Ops, não conseguimos deletar seu contato, tente novamente, detalhe do erro: {erro.Message}";
+                TempData["MensagemErro"] = $"Ops, não conseguimos deletar a Pessoa, tente novamente, detalhe do erro: {erro.Message}";
                 return RedirectToAction("Index");
             }
         }
@@ -89,14 +90,14 @@ namespace Pessoas.Controllers
                 if (ModelState.IsValid)
                 {
                     _pessoaRepositorio.Atualizar(pessoas);
-                    TempData["MensagemSucesso"] = "Contato Alterado com Sucesso";
+                    TempData["MensagemSucesso"] = "Pessoa Alterada com Sucesso";
                     return RedirectToAction("Index");
                 }
                 return View("Editar", pessoas);
             }
             catch (System.Exception erro)
             {
-                TempData["MensagemErro"] = $"Ops, não conseguimos Alterar seu contato, tente novamente, detalhe do erro: {erro.Message}";
+                TempData["MensagemErro"] = $"Ops, não conseguimos Alterar a Pessoa, tente novamente, detalhe do erro: {erro.Message}";
                 return RedirectToAction("Index");
             }
 
